@@ -121,13 +121,14 @@ Replace the filename with the pending migration and `DB` with your D1 binding na
 Workers Builds can deploy this repository independently of ChatGPT Sites.
 
 1. Create a D1 database named `solved-client-intake-db`.
-2. Add its UUID as the build variable `CLOUDFLARE_D1_DATABASE_ID`.
+2. The production D1 UUID is configured in `scripts/prepare-cloudflare-config.mjs`.
+   `CLOUDFLARE_D1_DATABASE_ID` may be set to override it for another account.
 3. Set the build command to `npm run build:cloudflare`.
 4. Set the deploy command to `npm run deploy:cloudflare`.
 5. Apply `drizzle/0000_superb_newton_destine.sql` to the production D1 database before accepting submissions.
 
-The build fails deliberately when the database ID is missing or malformed, so a
-deployment cannot silently publish with the local placeholder database binding.
+The build validates the database UUID so a deployment cannot silently publish
+with the local placeholder database binding.
 
 When using the Sites plugin, follow its skill instructions for installation, builds, and publishing. These npm commands remain available for standalone use.
 
