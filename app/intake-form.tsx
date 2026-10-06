@@ -1,7 +1,6 @@
 "use client";
 
 import { FormEvent, useEffect, useMemo, useState } from "react";
-import { Check, ChevronLeft, ChevronRight, CircleAlert, Loader2 } from "lucide-react";
 
 type FormData = {
   companyName: string; contactName: string; workEmail: string; phone: string; country: string; companyWebsite: string;
@@ -70,7 +69,7 @@ export function IntakeForm() {
     return () => lifecycle.abort();
   }, []);
 
-  if (reference) return <div className="intake-card success-card" role="status"><span className="success-icon"><Check size={28} /></span><p className="eyebrow">Brief received</p><h3>Thank you. Your reference is {reference}.</h3><p>solveD will review scope, missing inputs and package fit. Expect an initial response within two business days. No engineering work begins until scope, assumptions and commercial terms are agreed.</p><button className="button secondary" onClick={() => { setForm(initial); setStep(0); setReference(""); }}>Submit another project</button></div>;
+  if (reference) return <div className="intake-card success-card" role="status"><p className="form-label-top">Brief received</p><h3>Thank you. Your reference is {reference}.</h3><p>solveD will review scope, missing inputs and package fit. Expect an initial response within two business days. No engineering work begins until scope, assumptions and commercial terms are agreed.</p><button className="button secondary" onClick={() => { setForm(initial); setStep(0); setReference(""); }}>Submit another project</button></div>;
 
   return <form className="intake-card" onSubmit={submit} noValidate>
     <div className="step-header"><div><span>Step {step + 1} of {steps.length}</span><strong>{steps[step]}</strong></div><span>{Math.round(progress)}%</span></div>
@@ -86,7 +85,7 @@ export function IntakeForm() {
 
     {step === 1 && <div className="form-grid one-column">
       <Field label="Aircraft configuration" required><select {...input("configuration")}><option value="">Select one</option><option value="conventional-fixed-wing">Conventional fixed-wing</option><option value="flying-wing">Flying wing</option><option value="hybrid-vtol">Hybrid VTOL / transition aircraft</option><option value="multirotor">Multirotor only</option><option value="other">Other or undecided</option></select></Field>
-      {fixedPriceFit === "custom" && <div className="fit-notice"><CircleAlert size={19} /><p>This configuration needs custom scope review and is outside the fixed-price packages.</p></div>}
+      {fixedPriceFit === "custom" && <div className="fit-notice"><p>This configuration needs custom scope review and is outside the fixed-price packages.</p></div>}
       <Field label="Development stage" required><select {...input("developmentStage")}><option value="">Select one</option><option>Requirements only</option><option>Early sketches or spreadsheet sizing</option><option>CAD concept exists</option><option>Prototype exists</option><option>Flight-test iteration</option></select></Field>
       <Field label="Mission and blocked decision" required hint="Describe the payload, operating environment and the decision you need to make."><textarea {...input("missionSummary")} rows={6} placeholder="Example: compare two wing concepts for a mapping mission carrying a 1.2 kg payload..." /></Field>
     </div>}
@@ -112,8 +111,8 @@ export function IntakeForm() {
       <label className="consent"><input type="checkbox" checked={form.consent} onChange={(event) => set("consent", event.target.checked)} /><span>I confirm this submission contains no restricted or confidential design information and may be used by solveD to assess scope and contact me about this request.</span></label>
     </div>}
 
-    {error && <p className="form-error" role="alert"><CircleAlert size={18} />{error}</p>}
-    <div className="form-actions">{step > 0 ? <button className="button secondary" type="button" onClick={back}><ChevronLeft size={18} />Back</button> : <span />}{step < 4 ? <button className="button primary" type="button" onClick={next}>Continue<ChevronRight size={18} /></button> : <button className="button primary" type="submit" disabled={submitting}>{submitting ? <><Loader2 className="spin" size={18} />Submitting</> : "Submit project brief"}</button>}</div>
+    {error && <p className="form-error" role="alert">{error}</p>}
+    <div className="form-actions">{step > 0 ? <button className="button secondary" type="button" onClick={back}>Back</button> : <span />}{step < 4 ? <button className="button primary" type="button" onClick={next}>Continue</button> : <button className="button primary" type="submit" disabled={submitting}>{submitting ? "Submitting…" : "Submit project brief"}</button>}</div>
   </form>;
 }
 
