@@ -46,16 +46,16 @@ export default function Home() {
             <a href="https://wa.me/918220534367" target="_blank" rel="noreferrer">+91 82205 34367</a>
           </article>
           <article>
-            <p>Project enquiries · Calls</p>
+            <p>Project enquiries · Call / WhatsApp</p>
             <h3>solveD Client Desk</h3>
             <span>Initial project and service enquiries</span>
-            <a href="tel:+917418014367">+91 74180 14367</a>
+            <a href="https://wa.me/917418014367" target="_blank" rel="noreferrer">+91 74180 14367</a>
           </article>
           <article>
-            <p>Partnerships &amp; outreach</p>
+            <p>Partnerships &amp; outreach · WhatsApp</p>
             <h3>Lavanya</h3>
             <span>Business Development</span>
-            <a href="tel:+919548236647">+91 95482 36647</a>
+            <a href="https://wa.me/919548236647" target="_blank" rel="noreferrer">+91 95482 36647</a>
           </article>
           <article>
             <p>Professional profile</p>
