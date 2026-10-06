@@ -12,7 +12,7 @@ export default function Home() {
     <main id="top">
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="solveD home">solve<span>D</span></a>
-        <nav aria-label="Primary navigation"><a href="#services">Services</a><a href="#process">Process</a><a href="#intake">Project brief</a></nav>
+        <nav aria-label="Primary navigation"><a href="#services">Services</a><a href="#process">Process</a><a href="#intake">Project brief</a><a href="#contact">Contact</a></nav>
       </header>
 
       <section className="intro section-shell">
@@ -35,6 +35,36 @@ export default function Home() {
         <div className="intake-copy"><p className="kicker">03 / Project brief</p><h2>Tell us what the aircraft must do.</h2><p>This structured brief takes about ten minutes. Approximate values are acceptable when clearly identified as estimates.</p><div className="intake-guidance"><strong>Initial review</strong><p>Use only public or non-confidential information. If an NDA is required, select that option and keep sensitive files out of this form.</p></div></div>
         <IntakeForm />
       </div></section>
+
+      <section id="contact" className="section-shell contact-section">
+        <div className="section-title"><p>04 / Contact</p><h2>Discuss a mission, study scope or partnership.</h2></div>
+        <div className="contact-grid">
+          <article>
+            <p>Engineering enquiries · WhatsApp</p>
+            <h3>M. V. Dharaneesh</h3>
+            <span>Founder &amp; Engineering Lead</span>
+            <a href="https://wa.me/918220534367" target="_blank" rel="noreferrer">+91 82205 34367</a>
+          </article>
+          <article>
+            <p>Project enquiries · Calls</p>
+            <h3>solveD Client Desk</h3>
+            <span>Initial project and service enquiries</span>
+            <a href="tel:+917418014367">+91 74180 14367</a>
+          </article>
+          <article>
+            <p>Partnerships &amp; outreach</p>
+            <h3>Lavanya</h3>
+            <span>Business Development</span>
+            <a href="tel:+919548236647">+91 95482 36647</a>
+          </article>
+          <article>
+            <p>Professional profile</p>
+            <h3>M. V. Dharaneesh</h3>
+            <span>LinkedIn</span>
+            <a href="https://www.linkedin.com/in/m-v-dharaneesh0892/" target="_blank" rel="noreferrer">View LinkedIn profile</a>
+          </article>
+        </div>
+      </section>
 
       <footer className="section-shell site-footer"><div className="wordmark">solve<span>D</span></div><p>Preliminary engineering decision support for fixed-wing civil UAV teams.</p><p>Scope and commercial terms are confirmed before work begins.</p></footer>
     </main>
