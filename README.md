@@ -116,6 +116,19 @@ Replace the filename with the pending migration and `DB` with your D1 binding na
 - `npm run start`: preview the built Worker locally with D1/R2 support
 - `npm run db:generate`: generate Drizzle migrations after schema changes
 
+## Independent Cloudflare deployment
+
+Workers Builds can deploy this repository independently of ChatGPT Sites.
+
+1. Create a D1 database named `solved-client-intake-db`.
+2. Add its UUID as the build variable `CLOUDFLARE_D1_DATABASE_ID`.
+3. Set the build command to `npm run build:cloudflare`.
+4. Set the deploy command to `npm run deploy:cloudflare`.
+5. Apply `drizzle/0000_superb_newton_destine.sql` to the production D1 database before accepting submissions.
+
+The build fails deliberately when the database ID is missing or malformed, so a
+deployment cannot silently publish with the local placeholder database binding.
+
 When using the Sites plugin, follow its skill instructions for installation, builds, and publishing. These npm commands remain available for standalone use.
 
 The portable build runs Vinext directly without a host `timeout` command. The managed-linux build uses `scripts/build-verified.sh` and its existing `SITES_BUILD_TIMEOUT` setting.
