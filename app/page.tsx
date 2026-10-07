@@ -2,8 +2,8 @@ import { IntakeForm } from "./intake-form";
 
 const offers = [
   { name: "Design Risk Snapshot", price: "Free", delivery: "1–2 business days", scope: "A one-page review of public or non-confidential material, identifying three visible risks, missing inputs and the most useful next study." },
-  { name: "Mission Feasibility Check", price: "₹19,500 / US$320", delivery: "3–4 business days", scope: "One concept assessed against a defined mission, with preliminary mass, wing and energy bounds, major risks, a short memo and a review call." },
-  { name: "Concept Feasibility Sprint", price: "₹96,000 / US$1,600", delivery: "7–10 business days", scope: "Up to two concepts compared through preliminary geometry, aerodynamic screening, mission-energy analysis, stability review and an uncertainty-aware decision report." },
+  { name: "Mission Feasibility Check", price: "₹15,000 / US$320", delivery: "3–4 business days", scope: "One concept assessed against a defined mission, with preliminary mass, wing and energy bounds, major risks, a short memo and a review call." },
+  { name: "Concept Feasibility Sprint", price: "₹60,000 / US$1,600", delivery: "7–10 business days", scope: "Up to two concepts compared through preliminary geometry, aerodynamic screening, mission-energy analysis, stability review and an uncertainty-aware decision report." },
   { name: "Custom Engineering", price: "Quoted separately", delivery: "By agreement", scope: "Additional concepts, detailed CAD, CFD, FEA, optimization or expanded analysis when the work falls outside the fixed-price packages." },
 ];
 
